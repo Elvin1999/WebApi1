@@ -19,17 +19,7 @@ namespace WebApi1.Controllers
         [HttpGet("")]
         public IActionResult Get()
         {
-            var products = new List<Product>
-            {
-                new Product
-                {
-                     CategoryId=1,
-                      ProductId=1,
-                       ProductName="Appl Watch",
-                        UnitInStock=10,
-                         UnitPrice=30
-                }
-            };
+            var products = _productDal.GetList();
             return Ok(products);
         }
     }

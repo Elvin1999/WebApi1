@@ -2,7 +2,7 @@
 
 namespace WebApi1.DataAccess
 {
-    public interface IProductDal:IEntityRepository<Product>
+    public interface IProductDal : IEntityRepository<Product>
     {
     }
 }
