@@ -11,5 +11,6 @@ namespace WebApi1.DataAccess
             optionsBuilder.UseSqlServer(conn);
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
