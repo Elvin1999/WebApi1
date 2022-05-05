@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApi1.Models;
 
 namespace WebApi1.Controllers
@@ -8,6 +9,7 @@ namespace WebApi1.Controllers
     public class ContactController:Controller
     {
         [HttpGet("")]
+        [Authorize(Roles = "Admin")]
         public List<ContactModel> Get()
         {
             return new List<ContactModel>()

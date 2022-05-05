@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApi1.DataAccess;
 using WebApi1.Entities;
@@ -17,11 +18,13 @@ namespace WebApi1.Controllers
         }
 
         [HttpGet("")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Get()
         {
             var products = _productDal.GetList();
             return Ok(products);
         }
+
         [HttpGet("{productId}")]
         public IActionResult Get(int productId)
         {
